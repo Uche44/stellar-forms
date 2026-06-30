@@ -126,7 +126,15 @@ export const PaymentPage: React.FC = () => {
       }
     } catch (err: any) {
       console.error('Payment Error:', err);
-      toast.error(err.message || 'Payment transaction failed or was rejected.', { id: loadingToast });
+      let errorMsg = 'Payment transaction failed or was rejected.';
+      if (err.response?.data?.extras?.result_codes) {
+        const codes = err.response.data.extras.result_codes;
+        const opCodes = codes.operations ? ` (${codes.operations.join(', ')})` : '';
+        errorMsg = `Stellar network rejected transaction: ${codes.transaction}${opCodes}`;
+      } else if (err.message) {
+        errorMsg = err.message;
+      }
+      toast.error(errorMsg, { id: loadingToast });
     } finally {
       setIsPaying(false);
     }
