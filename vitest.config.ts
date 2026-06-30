@@ -7,5 +7,10 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',
+    server: {
+      deps: {
+        inline: ['@creit.tech/stellar-wallets-kit', '@stellar/freighter-api'],
+      },
+    },
   },
 })
