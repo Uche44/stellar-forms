@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = [
+    "forms",
+    "payments",
+]
+
+# Cargo only honors [profile.*] in the workspace ROOT manifest. The release profile
+# was previously declared in the member crates (where Cargo ignores it), so
+# `stellar contract build` failed on missing overflow-checks. Defined here now.
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+panic = "abort"
+codegen-units = 1
+lto = true

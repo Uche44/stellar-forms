@@ -1,0 +1,17 @@
+[package]
+name = "stellarforms-payments"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = "22.0.1"
+
+[dev-dependencies]
+# `testutils` enables Env::register*, mock_all_auths, Address::generate used in tests.
+soroban-sdk = { version = "22.0.1", features = ["testutils"] }
+
+# Release profile is defined once at the workspace root (contracts/Cargo.toml);
+# Cargo ignores [profile.*] in member crates.
