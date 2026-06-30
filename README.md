@@ -53,14 +53,13 @@ Please replace the placeholders below with screenshots from your live applicatio
 
 ### 2. Multi-Wallet Options (Level 2)
 
-![alt text](/public/image.png)
+![alt text](/public/image1.png)
 
 ### 3. Responsive UI & Infrastructure (Level 3)
 
 - **Mobile Responsive Layout**:
   ![alt text](/public/image2.png)
-- **CI/CD Pipeline Running**:
-  _[Insert screenshot showing the GitHub Actions workflow successfully passing]_
+
 - **Vitest Test Output (5+ Passing Tests)**:
   ![alt text](/public/image3.png)
 
