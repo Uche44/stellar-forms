@@ -5,7 +5,7 @@ import { Header } from '../components/Header';
 import { Wallet, Sparkles } from 'lucide-react';
 
 export const DashboardLayout: React.FC = () => {
-  const { isConnected, connect } = useWallet();
+  const { isConnected, openWalletModal } = useWallet();
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg relative selection:bg-brand-cyan/20 selection:text-brand-cyan">
@@ -31,7 +31,7 @@ export const DashboardLayout: React.FC = () => {
             </p>
             
             <button
-              onClick={connect}
+              onClick={openWalletModal}
               className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-purple to-brand-cyan hover:opacity-95 text-white font-bold py-3 px-6 rounded-xl transition-all btn-glow-purple"
             >
               <Sparkles size={18} />

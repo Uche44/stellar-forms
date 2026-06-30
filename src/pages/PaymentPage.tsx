@@ -2,10 +2,10 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
-import { TransactionBuilder, Asset, Operation, Networks, Horizon } from '@stellar/stellar-sdk';
+import { TransactionBuilder, Asset, Operation, Networks, Horizon, Memo } from '@stellar/stellar-sdk';
 import { mockStorage } from '../utils/mockStorage';
 import { useWallet } from '../context/WalletContext';
-import { ShieldCheck, Wallet, Sparkles, AlertCircle, CheckCircle } from 'lucide-react';
+import { ShieldCheck, Wallet, AlertCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export const PaymentPage: React.FC = () => {
@@ -25,7 +25,7 @@ export const PaymentPage: React.FC = () => {
     },
   });
 
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const [isPaying, setIsPaying] = React.useState(false);
 
@@ -86,7 +86,7 @@ export const PaymentPage: React.FC = () => {
           })
         )
         // Add a text memo to link this payment to the form ID
-        .addMemo(new Horizon.Memo(Horizon.MemoText, form.id.slice(0, 28)))
+        .addMemo(Memo.text(form.id.slice(0, 28)))
         .setTimeout(30) // Transaction expires in 30 seconds
         .build();
 
@@ -109,7 +109,7 @@ export const PaymentPage: React.FC = () => {
         });
 
         // 6. Record receipt details in mock storage
-        const savedRecord = mockStorage.savePayment({
+        mockStorage.savePayment({
           formId: form.id,
           formTitle: form.title,
           payer: payerAddress,

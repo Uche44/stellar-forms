@@ -1,12 +1,14 @@
 import React from 'react';
-import { X, Check } from 'lucide-react';
+import { X } from 'lucide-react';
 
 // Replicate WalletType enum from the kit to prevent import failures
-export enum WalletType {
-  FREIGHTER = 'freighter',
-  ALBEDO = 'albedo',
-  XBULL = 'xbull',
-}
+export const WalletType = {
+  FREIGHTER: 'freighter',
+  ALBEDO: 'albedo',
+  XBULL: 'xbull',
+} as const;
+
+export type WalletType = (typeof WalletType)[keyof typeof WalletType];
 
 interface WalletModalProps {
   isOpen: boolean;
@@ -23,7 +25,7 @@ export const WalletModal: React.FC<WalletModalProps> = ({ isOpen, onClose, onSel
       name: 'Freighter',
       desc: 'Official Stellar extension',
       icon: '🛸',
-      detected: !!window.stellar,
+      detected: !!(window as any).stellar,
     },
     {
       id: WalletType.ALBEDO,

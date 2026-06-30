@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useWallet } from '../context/WalletContext';
-import { Wallet, LogOut, Code, BarChart3, LayoutDashboard, Copy, Check } from 'lucide-react';
+import { Wallet, LogOut, Code, LayoutDashboard, Copy, Check } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export const Header: React.FC = () => {

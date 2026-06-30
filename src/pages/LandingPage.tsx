@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useWallet } from '../context/WalletContext';
-import { ArrowRight, Zap, CheckCircle2, ShieldCheck, Share2 } from 'lucide-react';
+import { ArrowRight, Zap, ShieldCheck, Share2 } from 'lucide-react';
 
 export const LandingPage: React.FC = () => {
-  const { isConnected, connect } = useWallet();
+  const { isConnected, openWalletModal } = useWallet();
 
   const features = [
     {
@@ -56,7 +56,7 @@ export const LandingPage: React.FC = () => {
               </Link>
             ) : (
               <button
-                onClick={connect}
+                onClick={openWalletModal}
                 className="w-full sm:w-auto flex items-center justify-center gap-2 bg-gradient-to-r from-brand-purple to-brand-cyan hover:opacity-95 text-white font-bold py-3 px-8 rounded-xl transition-all btn-glow-cyan"
               >
                 Get Started Now

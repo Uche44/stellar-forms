@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { mockStorage } from '../utils/mockStorage';
-import { CheckCircle2, ArrowRight, Copy, Check, ExternalLink, Calendar, User, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Copy, Check, ExternalLink } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export const ReceiptPage: React.FC = () => {
