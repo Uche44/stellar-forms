@@ -63,6 +63,9 @@ Please replace the placeholders below with screenshots from your live applicatio
 - **Vitest Test Output (5+ Passing Tests)**:
   ![alt text](/public/image3.png)
 
+- **Demo Video Link**:
+  `https://youtu.be/6scEIrx93F4`
+
 ---
 
 ## 🏗️ Architecture
