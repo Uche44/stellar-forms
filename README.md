@@ -2,7 +2,7 @@
 
 > Create payment forms. Share one link. Get paid directly on Stellar.
 
-StellarForms is a decentralized, non-custodial payment collection platform designed for creators, freelancers, and businesses. It allows anyone to generate customizable payment forms that visitors can settle directly using Stellar wallets. 
+StellarForms is a decentralized, non-custodial payment collection platform designed for creators, freelancers, and businesses. It allows anyone to generate customizable payment forms that visitors can settle directly using Stellar wallets.
 
 Unlike traditional payment gateways, StellarForms never holds user funds—payments are settled peer-to-peer on the Stellar network while payment configuration states are managed on-chain by Soroban smart contracts.
 
@@ -13,25 +13,29 @@ Unlike traditional payment gateways, StellarForms never holds user funds—payme
 This project has been built to satisfy all requirements for the **White Belt (Level 1)**, **Yellow Belt (Level 2)**, and **Orange Belt (Level 3)** submissions.
 
 ### 🌐 Live Demo & Repository
-* **GitHub Repository**: `https://github.com/Uche44/stellar-forms`
-* **Vercel Live Demo**: *[INSERT YOUR DEPLOYED VERCEL URL HERE, e.g., https://stellar-forms.vercel.app]*
+
+- **GitHub Repository**: `https://github.com/Uche44/stellar-forms`
+- **Vercel Live Demo**: `https://stellar-forms-r8ou.vercel.app/dashboard`
+  ;
 
 ### ⛓️ Deployed Smart Contracts (Stellar Testnet)
+
 Both Soroban contracts are compiled and deployed to the Stellar Testnet:
 
-| Contract | Testnet Contract ID |
-|----------|---------------------|
-| **FormsContract** | `CDU7UXX4GFJNUIAGM4AOONMXOSL3M6AHFUMGAFJTBAR6HZOTGIK6EFET` |
-| **PaymentsContract** | `CAYUFOPVI2WJTV5BUIORCAG7QTUOFJXHA7M2Y7GIVVIE7H6KHVIW7BMO` |
+| Contract                           | Testnet Contract ID                                        |
+| ---------------------------------- | ---------------------------------------------------------- |
+| **FormsContract**                  | `CDU7UXX4GFJNUIAGM4AOONMXOSL3M6AHFUMGAFJTBAR6HZOTGIK6EFET` |
+| **PaymentsContract**               | `CAYUFOPVI2WJTV5BUIORCAG7QTUOFJXHA7M2Y7GIVVIE7H6KHVIW7BMO` |
 | **Native XLM Token** (Testnet SAC) | `CDLZFC3SYJYDZT7K67VZ75HPJVIEUVNIXF47ZG2FB2RMQQVU2HHGCYSC` |
 
-* **Explorer Link (Forms)**: [Stellar.expert - Forms Contract](https://stellar.expert/explorer/testnet/contract/CDU7UXX4GFJNUIAGM4AOONMXOSL3M6AHFUMGAFJTBAR6HZOTGIK6EFET)
-* **Explorer Link (Payments)**: [Stellar.expert - Payments Contract](https://stellar.expert/explorer/testnet/contract/CAYUFOPVI2WJTV5BUIORCAG7QTUOFJXHA7M2Y7GIVVIE7H6KHVIW7BMO)
+- **Explorer Link (Forms)**: [Stellar.expert - Forms Contract](https://stellar.expert/explorer/testnet/contract/CDU7UXX4GFJNUIAGM4AOONMXOSL3M6AHFUMGAFJTBAR6HZOTGIK6EFET)
+- **Explorer Link (Payments)**: [Stellar.expert - Payments Contract](https://stellar.expert/explorer/testnet/contract/CAYUFOPVI2WJTV5BUIORCAG7QTUOFJXHA7M2Y7GIVVIE7H6KHVIW7BMO)
 
 ### 📝 Verified On-Chain Transactions
-* **Create Form #1** ("Coffee Tip", 5 XLM):
+
+- **Create Form #1** ("Coffee Tip", 5 XLM):
   `1acd42f2468962f8be7eb1fe00bdee424382d077075858c7b7799fc094f7e5c4`
-* **Process Payment** (Inter-contract query + Native payment transfer):
+- **Process Payment** (Inter-contract query + Native payment transfer):
   `401b5b8edae4b727a8a4a1e1a7756c50a897bd762d5738fa999da502913c844d`
 
 ---
@@ -41,22 +45,24 @@ Both Soroban contracts are compiled and deployed to the Stellar Testnet:
 Please replace the placeholders below with screenshots from your live application to complete your submission:
 
 ### 1. Wallet Connection & Balance (Level 1)
-* **Wallet Connected & Balance Displayed**:
-  *[Insert screenshot showing the wallet address and XLM balance displayed in the header]*
-* **Successful Testnet Transaction & Result**:
-  *[Insert screenshot of the Receipt page showing a successful testnet transaction hash and confirmation]*
+
+- **Wallet Connected & Balance Displayed**:
+  ![alt text](public/image.png)
+- **Successful Testnet Transaction & Result**:
+  ![alt text](/public/image4.png)
 
 ### 2. Multi-Wallet Options (Level 2)
-* **StellarWalletsKit Modal**:
-  *[Insert screenshot of the wallet connection options modal displaying Freighter, Albedo, and xBull]*
+
+![alt text](/public/image.png)
 
 ### 3. Responsive UI & Infrastructure (Level 3)
-* **Mobile Responsive Layout**:
-  *[Insert screenshot showing the mobile view of the Create Form or Payment pages]*
-* **CI/CD Pipeline Running**:
-  *[Insert screenshot showing the GitHub Actions workflow successfully passing]*
-* **Vitest Test Output (5+ Passing Tests)**:
-  *[Insert screenshot showing the terminal output of `npm run test` with 5 passing tests]*
+
+- **Mobile Responsive Layout**:
+  ![alt text](/public/image2.png)
+- **CI/CD Pipeline Running**:
+  _[Insert screenshot showing the GitHub Actions workflow successfully passing]_
+- **Vitest Test Output (5+ Passing Tests)**:
+  ![alt text](/public/image3.png)
 
 ---
 
@@ -90,6 +96,7 @@ Stellar Wallets Kit                                 Stellar SDK
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **Framework**: React 18, TypeScript, Vite
 - **Styling**: Tailwind CSS, PostCSS (custom glassmorphic theme)
 - **Routing**: React Router DOM v7
@@ -99,6 +106,7 @@ Stellar Wallets Kit                                 Stellar SDK
 - **Testing**: Vitest, React Testing Library, jsdom
 
 ### Smart Contracts
+
 - **Language**: Rust
 - **Target**: WASM (`wasm32-unknown-unknown`)
 - **Framework**: Soroban SDK (v22.0.1)
@@ -108,12 +116,14 @@ Stellar Wallets Kit                                 Stellar SDK
 ## 🚀 Setup & Installation
 
 ### Prerequisites
+
 - Node.js (v20+) & npm
 - Rust & Cargo (to compile contracts)
 - `stellar-cli` (to deploy contracts and interact via terminal)
 - A browser wallet (e.g. Freighter, Albedo, xBull) configured for Stellar Testnet.
 
 ### Frontend Installation
+
 1. Clone the repository and install the dependencies:
    ```bash
    npm install --legacy-peer-deps
@@ -129,6 +139,7 @@ Stellar Wallets Kit                                 Stellar SDK
 4. Access the application in your browser at `http://localhost:5173`.
 
 ### Smart Contracts Development
+
 The smart contracts are located in the `contracts/` directory.
 
 1. Navigate to the contract folder:
@@ -149,14 +160,19 @@ The smart contracts are located in the `contracts/` directory.
 ## 🧪 Testing
 
 ### Running Frontend Tests
+
 Frontend tests are built using Vitest and React Testing Library:
+
 ```bash
 npm run test
 ```
-*Currently contains 5 passing tests covering landing layouts and mock storage behaviors.*
+
+_Currently contains 5 passing tests covering landing layouts and mock storage behaviors._
 
 ### Running Rust Contract Tests
+
 To execute contract unit tests inside the cargo workspace:
+
 ```bash
 cargo test --manifest-path contracts/Cargo.toml
 ```
@@ -164,7 +180,9 @@ cargo test --manifest-path contracts/Cargo.toml
 ---
 
 ## ⚠️ Error Handling & UX Safety
+
 StellarForms implements robust checks to handle blockchain transaction errors gracefully:
+
 1. **Wallet Failures**: Catch and show toasts for rejected signatures, missing wallet extensions, or configuration errors (e.g., incorrect network).
 2. **Transaction Life Cycle**: Real-time spinner indicators and toast alerts for pending, successful, and failed blockchain transaction states.
 3. **Invalid Inputs**: Client-side validation using React Hook Form & Zod to block invalid Stellar public keys or negative XLM amounts before sending transaction XDRs.
